@@ -1,0 +1,222 @@
+body {
+    background-color:#404040;
+    background-image:url("background.png");
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	min-width:480px;
+    width: auto !important;
+    }
+
+#banner {
+    width: 85%;
+    display: inline-block;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    margin-top:25px;
+    }
+
+#content {
+    width: 79%;
+    background-color:#505050;
+    float:left;
+    border-bottom-left-radius: 20px;
+    text-align: center;
+    }
+
+#menu {
+    background-color:#505050;
+    border-bottom-right-radius: 20px;
+    padding-bottom:20px;
+    }
+
+.article {
+    width: 85%;
+    background-color:#606060;
+    display: inline-block;
+    border-radius:10px;
+    text-align: left;
+    margin:10px;
+    padding-left:30px;
+    padding-right:10px;
+    padding-top:10px;
+    padding-bottom:50px;
+    text-align:justify;
+    }
+
+.autor {
+    font-size:14px;
+    font-style:oblique;
+    text-align:center;
+    }
+
+.center {
+    width:85%;
+    display:inline-block;
+}
+
+.main {
+    background-color:#151515;
+    color:white;
+    border-style:solid;
+    border-color:black; 
+    padding-top:5px;
+    padding-bottom:5px;
+    }
+
+.main:hover {
+    background-color:#202020;
+    font-weight: bold;
+    }
+
+a:link {
+    color:black;
+}
+
+a:visited {
+    color:black;
+}
+
+.tictactoe {
+    width:50vw;
+    height:65vw;
+    background-color: white;
+    border-radius:20px;
+    display: inline-block;
+}
+
+.ttt {
+    width: 15vw;
+    height: 15vw;
+    background-color: silver;
+    border-style: dashed;
+    border-color: darkgray;
+    border-width: 3px;
+    font-size: 6vw;
+    font-weight: bold;
+    vertical-align: middle;
+    float: left;
+}
+
+.ttt:hover {
+    background-color: darkgray;
+}
+
+.tttrow {
+    width: 90%;
+    clear: both;
+    margin-left:20px;
+}
+
+.tttmenu {
+    width: 0vw;
+    float: right;
+    text-align: left;
+    visibility: hidden;
+}
+
+#multi {
+    font-weight: bold;
+}
+
+.dynamic {
+    display: none;
+}
+
+@media only screen and (min-width: 480px) {
+    /* For phones: */
+    .main { width: 99%; clear: both;}
+    #menu { width: 100%; clear: both; border-bottom-right-radius: 20px; border-bottom-left-radius: 20px; padding-bottom:20px;}
+    #content { width: 100%; clear: both; border-bottom-left-radius: 0px;}
+    h1 { font-size:4vw;}
+    .tictactoe { width:60vw; height:80vw; }
+    .ttt { width:17vw; height:17vw; }
+  }
+@media only screen and (min-width: 640px) {
+    /* For tablets: */
+    .main { width: 99%; clear: both;}
+    #menu { width: 20%; clear: none; float: right; border-bottom-left-radius: 0px;}
+    #content { width: 78%; clear: none; border-bottom-left-radius: 20px; }
+    .autor { font-size:2vw; }
+    .article { font-size:2vw; width: 80%}
+    h1 { font-size:3vw;}
+    .tictactoe { width:55vw; height:68vw; }
+    .ttt { width:16vw; height:16vw; }
+  }
+  @media only screen and (min-width: 860px) {
+    /* For desktop: */
+    .main { float:left; width:15%; clear: none;} 
+    #menu { width: 20%; clear: none; float: right; border-bottom-left-radius: 0px;}
+    #content { width: 78%; clear: none; border-bottom-left-radius: 20px;}
+    .autor { font-size:1.5vw; }
+    .article { font-size:1.5vw; width: 85% }
+    h1 { font-size:3vw;}
+    .tictactoe { width:50vw; height:60vw; }
+    .ttt { width:15vw; height:15vw; }
+  }
+
+  .form_reg {
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	clear: both;
+	width: 350px;
+	background: silver;
+	font-size: 15px;
+	border: 5px solid #1f1f1f;
+	border-radius: 20px;
+}
+
+.formT {
+	padding-left: 10px;
+	text-align: left;
+	clear:both;
+	width: 100%;
+	font-size: 20px;
+	color: white;
+	
+}
+
+.formP {
+	clear:both;
+	width: 100%;
+}
+
+.formB {
+	clear: both;
+	margin-top: 5px;
+}
+
+input[type=text], [type=password], [type=email], select, [type=number] {
+	width: 95%;
+	height: 25px;
+	float: right;
+	margin: 5px;
+}
+
+textarea {
+	width: 95%;
+	height: 80px;
+	float: right;
+	margin: 5px;
+}
+
+input[type=text]:hover, [type=password]:hover, [type=email]:hover, [type=number]:hover, select:hover, textarea:hover {
+	background: darkgray;
+}
+
+input[type=submit], [type=reset], [type=button] {
+	clear:both;
+	width: 95%;
+	height: 25px;
+	border-radius: 5px;
+	border: 2px solid black;
+	background: darkgray;
+	color: white;
+	text-align: center;
+	margin: 5px;
+	font-size: 17px;
+}
+
+input[type=submit]:hover, [type=reset]:hover, [type=button]:hover {
+	background: #1f1f1f;
+}
+
