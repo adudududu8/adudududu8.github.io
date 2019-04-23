@@ -17,11 +17,14 @@
                         cookie     : true,
                         xfbml      : true,
                         version    : 'v3.2'
-                      });
-                        
-                      FB.AppEvents.logPageView();   
+                      }); 
                         
                     };
+
+                    FB.getLoginStatus(function(response) {
+                        statusChangeCallback(response);
+                    });
+
                   
                     (function(d, s, id){
                        var js, fjs = d.getElementsByTagName(s)[0];
@@ -31,9 +34,45 @@
                        fjs.parentNode.insertBefore(js, fjs);
                      }(document, 'script', 'facebook-jssdk'));
 
-                     FB.getLoginStatus(function(response) {
-                        statusChangeCallback(response);
-                    });
+                     function statusChangeCallback(response) {
+                        console.log('statusChangeCallback');
+                        console.log(response);
+                        if (response.status === 'connected') {
+                            // Logged into your app and Facebook.
+                            alert("git");
+                            //testAPI();
+                        } else {
+                            // The person is not logged into your app or we are unable to tell.
+                            //document.getElementById('status').innerHTML = 'Please log ' +
+                            //'into this app.';
+                            alert("nie git");
+
+                        }
+                        }
+
+                     
+
+      
+        // This function is called when someone finishes with the Login
+        // Button.  See the onlogin handler attached to it in the sample
+        // code below.
+        function checkLoginState() {
+          FB.getLoginStatus(function(response) {
+            statusChangeCallback(response);
+          });
+        }
+      
+       
+        function testAPI() {
+          /*console.log('Welcome!  Fetching your information.... ');
+          FB.api('/me', { locale: 'pl_PL', fields: 'name, email' }, function(response) {
+            console.log('Successful login for: ' + response.name);
+            console.log(response);
+            document.getElementById('status').innerHTML =
+              'Witaj, ' + response.name + '! Twój email: ' + response.email;
+          });*/
+          alert("tutaj też git");
+        }
 
                     
                   </script>
@@ -43,7 +82,7 @@
 				<img src="banner.png" alt="Banner" style="width:100%; border-top-left-radius: inherit; border-top-right-radius: inherit;">
 			</div>
 			<div class="center">
-				<a href="#" class="dynamic-link" data-page="zad1"><div class="main">Zadanie 1</div></a>
+				<a href="#" class="dynamic-link" data-page="zad1"><div class="main">Zadanie FB</div></a>
 				<a href="#" class="dynamic-link" data-page="zad2"><div class="main">Gra</div></a>
                 <a href="#" class="dynamic-link" data-page="form"><div class="main">Formularz</div></a>
                 <a href="#" class="dynamic-link" data-page="bledy"><div class="main">Błędy</div></a>
@@ -55,45 +94,7 @@
                                 
 <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
     </fb:login-button>
-                                    <h1>Lorem ipsum...</h1>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ornare, leo vitae dapibus viverra, turpis diam
-                                    bibendum mauris, non scelerisque dui eros vel tortor. Quisque vel erat ut tortor convallis suscipit id at quam.
-                                    Nunc accumsan dignissim commodo. Pellentesque eu velit sit amet tortor iaculis blandit. Maecenas cursus tincidunt
-                                    commodo. Sed egestas ultrices elit, vehicula dignissim ligula. Nulla non accumsan ex. Nam tincidunt purus lacus,
-                                    in porta leo blandit non. Fusce eget viverra turpis, quis tempus massa. Nullam molestie, elit sit amet laoreet
-                                    ornare, orci turpis egestas risus, sed consequat velit dolor vitae leo.
-                                    <br><br>
-                                    Sed nec ornare orci. In ultricies justo vel libero lacinia tempus nec sit amet diam. Nam iaculis auctor arcu
-                                    consectetur iaculis. Nam risus elit, ultrices nec felis non, tincidunt commodo nibh. Aenean vestibulum bibendum
-                                    sollicitudin. Quisque pharetra justo ut ligula accumsan, in aliquam mi dignissim. Nulla ullamcorper posuere
-                                    pellentesque. Phasellus eget ante feugiat, egestas risus ut, tincidunt diam. Vivamus pulvinar at nulla at volutpat.
-                                    Cras rhoncus est viverra lectus feugiat euismod. Mauris vestibulum mauris nunc, sed elementum ante rhoncus eu.
-                                    Suspendisse sed sem et mi ullamcorper malesuada. Etiam tristique non turpis nec scelerisque.
-                                    <br><br>
-                                    Quisque placerat eleifend libero, vitae tempus lorem venenatis in. Donec erat diam, consequat sed quam a, facilisis
-                                    venenatis arcu. Nullam faucibus, mauris at egestas aliquet, lacus magna porta tortor, sed posuere quam leo nec
-                                    sapien. Integer ornare nulla eget dui fringilla consectetur. Mauris sed felis nulla. Etiam eu neque sed tellus
-                                    mattis maximus ac nec eros. Morbi sem lectus, bibendum semper odio sit amet, faucibus rutrum enim. Praesent ac mi
-                                    eros. Praesent mattis mattis interdum. Etiam varius felis ac justo venenatis, eu bibendum diam rutrum. Sed laoreet
-                                    libero sed enim congue sagittis. Pellentesque non ligula a felis auctor vestibulum at elementum dui. Aliquam metus
-                                    libero, ultrices ut cursus ut, facilisis a enim. Nulla egestas est in massa pellentesque, vel dignissim quam ornare.
-                                    Morbi mattis tincidunt vulputate.
-                                    <br><br>
-                                    Nam ac turpis nec urna vehicula vehicula vel eget nunc. Suspendisse ut tristique diam. Integer condimentum maximus
-                                    tristique. Phasellus id commodo lectus, ac mollis metus. Vestibulum tincidunt pharetra velit, vitae luctus massa
-                                    semper at. Quisque aliquet dui in congue tincidunt. Etiam ultricies sagittis faucibus. Ut eu elit ut diam fringilla
-                                    posuere. Phasellus iaculis nisi tortor, vel suscipit libero efficitur sit amet. Aenean eu suscipit ante, eget
-                                    tristique justo. Maecenas blandit sed nibh id vehicula. Etiam fringilla ipsum auctor molestie laoreet. Aliquam
-                                    faucibus ex sit amet laoreet tincidunt.
-                                    <br><br>
-                                    Aenean orci dui, interdum ut sem quis, porttitor rutrum felis. Nulla porttitor pellentesque ultricies. Nulla
-                                    condimentum rutrum est eu pretium. Nulla placerat leo quis elit elementum tincidunt. Sed fermentum orci id sapien
-                                    molestie, non finibus mi sagittis. Quisque scelerisque congue eros eget molestie. Praesent maximus arcu et posuere
-                                    fringilla. Nunc eget dapibus dolor. Sed placerat erat dapibus tellus consectetur iaculis. Suspendisse potenti.
-                                    Quisque eget erat ut leo facilisis gravida. Interdum et malesuada fames ac ante ipsum primis in faucibus. Cras
-                                    luctus sed augue in aliquet. Donec vehicula, odio id pulvinar egestas, massa leo porta dolor, at hendrerit nisl
-                                    justo sed ipsum. Proin euismod, dui vel hendrerit sagittis, ante mauris imperdiet ligula, eu ornare felis arcu nec
-                                    quam.
+                                    
                                 </div>
                     </div>
                     <div class="dynamic zad2">
