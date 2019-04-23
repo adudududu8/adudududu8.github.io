@@ -45,12 +45,13 @@
                      function statusChangeCallback(response) {
 
                         if (response.status === 'connected') {
+				document.getElementById('app_button').style.visibility = "hidden";
                             document.getElementById('app').innerHTML = 'Zalogowałeś się!';
                             testAPI();
                         } 
 
                         else {
-                            //document.getElementById('app').innerHTML = "<fb:login-button scope='public_profile,email' onlogin='checkLoginState();'></fb:login-button>";
+                            document.getElementById('app_button').style.visibility = "visible";
                         }
                     }
       
@@ -76,9 +77,13 @@
 			<div class="center">
 				<div id="content">
 					<div class="dynamic zad1">
-                            <div class="article" id="app">
+                            <div class="article">
+				    				    <div id="app_button">
                                 <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
                                 </fb:login-button>
+				    </div>
+				    <div id="app">
+				    </div>
                             </div>
                     </div>
                     <div class="dynamic zad2">
