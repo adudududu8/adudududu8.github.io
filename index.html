@@ -57,7 +57,7 @@
         function testAPI() {
           FB.api('/me?fields=name,email,profile_pic', function(response) {
             document.getElementById('app').innerHTML =
-              'Imię i nazwisko: ' + response.name + '<br>Mail: ' + response.email + '<br>' + response.profile_pic + '<br>koniec';
+              'Imię i nazwisko: ' + response.name + '<br>Mail: ' + response.email + '<br>Coś o zdjęciu: ' + response.profile_pic + '<br>koniec';
           });
           alert("tutaj też git");
         }
