@@ -56,7 +56,7 @@
        
         function testAPI() {
           FB.api('/me', { locale: 'pl_PL', fields: 'name, email' }, function(response) {
-            document.getElementById('status').innerHTML =
+            document.getElementById('app').innerHTML =
               'Witaj, ' + response.name + '! Twój email: ' + response.email;
           });
           alert("tutaj też git");
