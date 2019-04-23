@@ -20,7 +20,9 @@
                       }); 
                       checkLoginState()
                         
-                    };                    
+                    };        
+
+
                     (function(d, s, id){
                        var js, fjs = d.getElementsByTagName(s)[0];
                        if (d.getElementById(id)) {return;}
@@ -28,30 +30,32 @@
                        js.src = "https://connect.facebook.net/en_US/sdk.js";
                        fjs.parentNode.insertBefore(js, fjs);
                      }(document, 'script', 'facebook-jssdk'));
+
+
                     function checkLoginState() {
                         FB.getLoginStatus(function(response) {
                             statusChangeCallback(response);
                         });
                         }
+
+
                      function statusChangeCallback(response) {
-                        console.log('statusChangeCallback');
-                        console.log(response);
+
                         if (response.status === 'connected') {
                             document.getElementById('app').innerHTML = "Zalogowałeś się!";
-                            alert("git");
                             testAPI();
-                        } else {
-                            document.getElementById('app').innerHTML = 'Nie jesteś zalogowany!<br><fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button>';
-                            alert("nie git");
+                        } 
+
+                        else {
+                            document.getElementById('app').innerHTML = '<fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button>';
                         }
-                        }
+                    }
       
        
         function testAPI() {
           FB.api('/me?fields=name,gender,email,link', function(response) {
             document.getElementById('app').innerHTML = ('Imię i nazwisko: ' + response.name + '<br>Płeć: ' + response.gender + '<br>Mail: ' + response.email + '<br>Coś o zdjęciu: <br>Profil: ' + response.link + '<br>');
           });
-          alert("tutaj też git");
         }
                     
                   </script>
