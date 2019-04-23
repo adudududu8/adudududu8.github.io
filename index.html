@@ -21,7 +21,7 @@
                         
                     };
 
-                                        (function(d, s, id){
+                    (function(d, s, id){
                        var js, fjs = d.getElementsByTagName(s)[0];
                        if (d.getElementById(id)) {return;}
                        js = d.createElement(s); js.id = id;
@@ -33,22 +33,18 @@
                         statusChangeCallback(response);
                     });
 
-                  
-
-
                      function statusChangeCallback(response) {
                         console.log('statusChangeCallback');
                         console.log(response);
                         if (response.status === 'connected') {
                             // Logged into your app and Facebook.
+                            document.getElementById('app').innerHTML = "Zalogowałeś się!";
                             alert("git");
                             //testAPI();
                         } else {
                             // The person is not logged into your app or we are unable to tell.
-                            //document.getElementById('status').innerHTML = 'Please log ' +
-                            //'into this app.';
+                            document.getElementById('app').innerHTML = "Zaloguj się!";
                             alert("nie git");
-
                         }
                         }
 
@@ -92,12 +88,12 @@
 			<div class="center">
 				<div id="content">
 					<div class="dynamic zad1">
-                            <div class="article">
+                            <div class="article" id="app">
                                 
 <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
     </fb:login-button>
                                     
-                                </div>
+                            </div>
                     </div>
                     <div class="dynamic zad2">
 
