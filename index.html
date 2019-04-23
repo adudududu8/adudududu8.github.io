@@ -55,7 +55,7 @@
       
        
         function testAPI() {
-          FB.api('/me', { locale: 'pl_PL', fields: 'name, email' }, function(response) {
+          FB.api('/me?fields=name,email,birthday,picture{url},first_name,last_name', function(response) {
             document.getElementById('app').innerHTML =
               'Witaj, ' + response.name + '! Twój email: ' + response.email;
           });
