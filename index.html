@@ -40,10 +40,10 @@
                             // Logged into your app and Facebook.
                             document.getElementById('app').innerHTML = "Zalogowałeś się!";
                             alert("git");
-                            //testAPI();
+                            testAPI();
                         } else {
                             // The person is not logged into your app or we are unable to tell.
-                            document.getElementById('app').innerHTML = "Zaloguj się!";
+                            document.getElementById('app').innerHTML = "Nie jesteś zalogowany!<br><fb:login-button scope='public_profile,email' onlogin='checkLoginState();'></fb:login-button>";
                             alert("nie git");
                         }
                         }
@@ -89,9 +89,9 @@
 				<div id="content">
 					<div class="dynamic zad1">
                             <div class="article" id="app">
-                                
-<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
-    </fb:login-button>
+                                Nie jesteś zalogowany!<br>
+                                <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+                                </fb:login-button>
                                     
                             </div>
                     </div>
