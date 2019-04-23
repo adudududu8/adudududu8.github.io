@@ -41,34 +41,24 @@
                         console.log('statusChangeCallback');
                         console.log(response);
                         if (response.status === 'connected') {
-                            // Logged into your app and Facebook.
                             document.getElementById('app').innerHTML = "Zalogowałeś się!";
                             alert("git");
                             testAPI();
                         } else {
-                            // The person is not logged into your app or we are unable to tell.
                             document.getElementById('app').innerHTML = "Nie jesteś zalogowany!<br><fb:login-button scope='public_profile,email' onlogin='checkLoginState();'></fb:login-button>";
                             alert("nie git");
                         }
                         }
 
-                     
 
-      
-        // This function is called when someone finishes with the Login
-        // Button.  See the onlogin handler attached to it in the sample
-        // code below.
 
       
        
         function testAPI() {
-          /*console.log('Welcome!  Fetching your information.... ');
           FB.api('/me', { locale: 'pl_PL', fields: 'name, email' }, function(response) {
-            console.log('Successful login for: ' + response.name);
-            console.log(response);
             document.getElementById('status').innerHTML =
               'Witaj, ' + response.name + '! Twój email: ' + response.email;
-          });*/
+          });
           alert("tutaj też git");
         }
 
