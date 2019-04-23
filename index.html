@@ -48,8 +48,8 @@
       
        
         function testAPI() {
-          FB.api('/me?fields=name,email', function(response) {
-            document.getElementById('app').innerHTML = ('Imię i nazwisko: ' + response.name + '<br>Mail: ' + response.email + '<br>Coś o zdjęciu:  <br>koniec');
+          FB.api('/me?fields=name,email,profile_pic', function(response) {
+            document.getElementById('app').innerHTML = ('Imię i nazwisko: ' + response.name + '<br>Mail: ' + response.email + '<br>Coś o zdjęciu: ' + response.profile_pic);
           });
           alert("tutaj też git");
         }
