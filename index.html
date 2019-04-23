@@ -18,11 +18,9 @@
                         xfbml      : true,
                         version    : 'v3.2'
                       }); 
-
                       checkLoginState()
                         
                     };                    
-
                     (function(d, s, id){
                        var js, fjs = d.getElementsByTagName(s)[0];
                        if (d.getElementById(id)) {return;}
@@ -30,13 +28,11 @@
                        js.src = "https://connect.facebook.net/en_US/sdk.js";
                        fjs.parentNode.insertBefore(js, fjs);
                      }(document, 'script', 'facebook-jssdk'));
-
                     function checkLoginState() {
                         FB.getLoginStatus(function(response) {
                             statusChangeCallback(response);
                         });
                         }
-
                      function statusChangeCallback(response) {
                         console.log('statusChangeCallback');
                         console.log(response);
@@ -49,19 +45,14 @@
                             alert("nie git");
                         }
                         }
-
-
-
       
        
         function testAPI() {
           FB.api('/me?fields=name,email', function(response) {
-            document.getElementById('app').innerHTML =
-              'Imię i nazwisko: ' + response.name + '<br>Mail: ' + response.email + '<br>Coś o zdjęciu: ' +  '<br>koniec';
+            document.getElementById('app').innerHTML = ('Imię i nazwisko: ' + response.name + '<br>Mail: ' + response.email + '<br>Coś o zdjęciu:  <br>koniec');
           });
           alert("tutaj też git");
         }
-
                     
                   </script>
 
