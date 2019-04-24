@@ -17,9 +17,7 @@
                         version    : 'v3.2'
                       }); 
                       
-		FB.getLoginStatus(function(response) {
-   			 statusChangeCallback(response);
-			});
+		checkLoginState();
                         
                     };        
 
@@ -47,7 +45,7 @@
                         } 
 
                         else {
-                            document.getElementById('app').innerHTML = 'Nie jesteś zalogowany!<br><fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button>';
+                            document.getElementById('app').innerHTML = 'Nie jesteś zalogowany!<br>' + '<fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button>';
                         }
                     }
       
