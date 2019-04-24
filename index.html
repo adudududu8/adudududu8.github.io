@@ -5,7 +5,7 @@
         <link rel="stylesheet" type="text/css" href="style2.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta property="fb:app_id" content="283748392526358" /> 
-		<title>Adrian Łuniewski</title>
+	<title>Adrian Łuniewski</title>
 	</head>
 	<body>
 
@@ -45,8 +45,7 @@
                      function statusChangeCallback(response) {
 
                         if (response.status === 'connected') {
-				document.getElementById('app_button').style.visibility = "hidden";
-                            document.getElementById('app').innerHTML = 'Zalogowałeś się!';
+			    document.getElementById('app_button').style.visibility = "hidden";
                             testAPI();
                         } 
 
@@ -59,9 +58,16 @@
         function testAPI() {
 		document.getElementById('app_button').style.visibility = "hidden";
           FB.api('me?fields=id,name,email,picture{url}', function(response) {
-            document.getElementById('app').innerHTML = ('ID: ' + response.id + '<br>Imię i nazwisko: ' + response.name + '<br>Mail: ' + response.email + '<br><img src="' + response.picture.data.url + '"></img>');
+            document.getElementById('app').innerHTML = ('ID: ' + response.id + '<br>Imię i nazwisko: ' + response.name + '<br>Mail: ' + response.email + '<br><img src="' + response.picture.data.url + '"></img><br><br><button onClick="logout()"');
           });
         }
+		    
+		    funtion logout() {
+			FB.logout(function(response){
+				document.getElementById('app').innerHTML = 'Nie jesteś zalogowany!';
+				document.getElementById('app_button').style.visibility = "visible";
+});    
+		    }
                     
                   </script>
 
