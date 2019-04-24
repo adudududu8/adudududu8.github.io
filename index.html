@@ -8,9 +8,7 @@
 	<title>Adrian Łuniewski</title>
 	</head>
 	<body>
-
-
-            <script>
+           <script>
                     window.fbAsyncInit = function() {
                       FB.init({
                         appId      : '283748392526358',
@@ -45,12 +43,16 @@
                      function statusChangeCallback(response) {
 
                         if (response.status === 'connected') {
-			    document.getElementById('app_button').style.visibility = "hidden";
+                           
+				document.getElementById('app_button').innerHTML = '';
+
                             testAPI();
                         } 
 
                         else {
-                            document.getElementById('app_button').style.visibility = "visible";
+                            document.getElementById('app').innerHTML = 'Nie jesteś zalogowany!';
+				            document.getElementById('app_button').innerHTML = '<fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button>';
+
                         }
                     }
       
@@ -58,14 +60,14 @@
         function testAPI() {
 		document.getElementById('app_button').style.visibility = "hidden";
           FB.api('me?fields=id,name,email,picture{url}', function(response) {
-            document.getElementById('app').innerHTML = ('ID: ' + response.id + '<br>Imię i nazwisko: ' + response.name + '<br>Mail: ' + response.email + '<br><img src="' + response.picture.data.url + '"></img><br><br><button onClick="logout()"');
+            document.getElementById('app').innerHTML = ('ID: ' + response.id + '<br>Imię i nazwisko: ' + response.name + '<br>Mail: ' + response.email + '<br><img src="' + response.picture.data.url + '"></img><br><br><button onClick="logout()">Wyloguj się</button>');
           });
         }
 		    
 		    function logout() {
 			FB.logout(function(response){
 				document.getElementById('app').innerHTML = 'Nie jesteś zalogowany!';
-				document.getElementById('app_button').style.visibility = "visible";
+				document.getElementById('app_button').innerHTML = '<fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button>';
 });    
 		    }
                     
@@ -86,8 +88,7 @@
 					<div class="dynamic zad1">
                             <div class="article">
 				    				    <div id="app_button">
-                                <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
-                                </fb:login-button>
+                                
 				    </div>
 				    <div id="app">
 				    </div>
