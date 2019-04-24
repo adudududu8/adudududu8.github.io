@@ -49,7 +49,7 @@
 
                         else {
                             document.getElementById('app').innerHTML = 'Nie jesteś zalogowany!';
-				            document.getElementById('app_button').style.display = 'block';
+				document.getElementById('app_button').style.display = 'block';
                         }
                     }
       
@@ -62,7 +62,7 @@
         }
 		    
 		    function logout() {
-                
+                	document.getElementById('app_button').style.display = 'block';
 			FB.logout(function(response){checkLoginState(); });    
 			    
 		    }
