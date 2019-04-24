@@ -63,9 +63,9 @@
         }
 		    
 		    function logout() {
-                document.getElementById('app').innerHTML = 'Nie jesteś zalogowany!';
-				document.getElementById('app_button').innerHTML = '<fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button>';
+                
 			FB.logout(function(response){ });    
+			    document.location.reload(true);
 		    }
                     
                   </script>
