@@ -64,7 +64,7 @@
 		    
 		    function logout() {
                 
-			FB.logout(function(response){statusChangeCallback(response); });    
+			FB.logout(function(response){checkLoginState(); });    
 			    
 		    }
                     
