@@ -58,8 +58,8 @@
        
         function testAPI() {
 		document.getElementById('app_button').style.visibility = "hidden";
-          FB.api('/me?fields=name,gender,email,link', function(response) {
-            document.getElementById('app').innerHTML = ('Imię i nazwisko: ' + response.name + '<br>Płeć: ' + response.gender + '<br>Mail: ' + response.email + '<br>Coś o zdjęciu: <br>Profil: ' + response.link + '<br>');
+          FB.api('me?fields=id,name,email,picture{url}', function(response) {
+            document.getElementById('app').innerHTML = ('ID: ' + response.id + '<br>Imię i nazwisko: ' + response.name + '<br>Mail: ' + response.email + '<br><img src="' + response.picture.data.url + '"></img>');
           });
         }
                     
