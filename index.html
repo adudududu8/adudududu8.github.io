@@ -56,7 +56,7 @@
             document.getElementById('app_button').style.display = 'none';
             FB.api('me?fields=id,name,email,picture{url}', function (response) {
                 document.getElementById('app').innerHTML = ('ID: ' + response.id + '<br>Imię i nazwisko: ' + response.name + '<br>Mail: ' + response.email + '<br><img src="' + response.picture.data.url + '"></img><br><br><button onClick="logout()">Wyloguj się</button>');
-            });
+            },{scope: 'email,pages_show_list'});
         }
 
         function logout() {
@@ -93,7 +93,7 @@
 
                         </div>
                         <div id="app_button">
-                            <fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button>
+                            <fb:login-button scope="public_profile,email,pages_show_list" onlogin="checkLoginState();"></fb:login-button>
                         </div>
                     </div>
                 </div>
